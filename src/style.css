@@ -1,0 +1,878 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.App{
+    position: relative;
+    display: flex;
+}
+
+.home{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 280px;
+    background-color: #7145b3;
+}
+
+.home>h1{
+    color: #fff;
+    text-align: center;
+    padding: 0 2rem;
+}
+
+.home>p{
+    color: #fff;
+    text-align: center;
+    padding: 0 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+nav{
+    height: 100%;
+}
+
+.navLeft{
+    position: fixed;
+    height: 100vh;
+    width: 280px;
+    background-color: #6541A5;
+    -webkit-box-shadow: 0px -2px 20px -1px rgba(0,0,0,0.37);
+    -moz-box-shadow: 0px -2px 20px -1px rgba(0,0,0,0.37);
+    box-shadow: 0px -2px 20px -1px rgba(0,0,0,0.37);
+}
+
+.navLink{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navLogo img{
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    transition: cubic-bezier(0.23, 1, 0.320, 1) .3s;
+}
+
+.openMenu{
+    display: none;
+}
+
+.closeMenu{
+    display: none;
+}
+
+.navItems ul{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 3rem 0;
+    padding: 0;
+    background-color: #6541A5;
+    list-style: none;
+}
+
+.navItems ul li{
+    list-style: none;
+}
+
+.navItems ul a{
+    text-decoration: none;
+    color: #fff;
+    background-color: #6541A5;
+    border-left: 4px solid #6541A5;
+    border-bottom: 1px solid #7145b3;
+    transition: .3s;
+}
+
+.navItems ul a:hover{
+    background-color: #7145b3;
+    border-left: 4px solid #7145b3;
+}
+
+.navItems ul a li{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    list-style: none;
+    cursor: pointer;
+    padding: 1rem 1.2rem;
+    text-align: left;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.navItems ul a li img{
+    width: 10%;
+    margin-right: .6rem;
+}
+
+.searchForm{
+    margin-bottom: 2rem;
+}
+
+.searchForm form{
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.searchForm input{
+    height: 2rem;
+    width: 100%;
+    font-size: 1rem;
+    border: none;
+    border: 2px solid #7145b3;
+    border-radius: 30px;
+    background-color: #7145b3;
+    list-style: none;
+    appearance: none;
+    outline: none;   
+    color: #AB91D2;
+    padding: .75rem 3rem;
+    margin: 0 1.2rem;
+    transition: .3s;
+}
+
+.searchForm input:focus-visible{
+    background-color: #7145b3;
+    outline-style: none;
+    border: 2px solid #AB91D2;
+}
+
+.searchForm input:invalid{
+    box-shadow: none;
+}
+
+.searchForm input::placeholder{
+    text-align: left;
+    color: #AB91D2;
+}
+
+.searchForm button{
+    position: absolute;
+    top: 18px;
+    left: 0;
+    margin-left: 1.6rem;
+    height: 1.4rem;
+    width: auto;
+    background: none;
+    border: none;
+    cursor: pointer;
+    opacity: .4;
+}
+
+.searchForm button img{
+    height: 100%;
+    width: auto;
+}
+
+.search{
+    height: 100vh;
+    width: 100%;
+    margin-left: 280px;
+}
+
+.searchResult{
+    width: 370px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: 4px;
+    background: linear-gradient(to right, #6541A5, #aa8fd1);
+    margin-bottom: 3rem;
+    -webkit-box-shadow: 5px 5px 20px -15px rgba(0,0,0,0.58);
+    -moz-box-shadow: 5px 5px 20px -15px rgba(0,0,0,0.58);
+    box-shadow: 5px 5px 20px -15px rgba(0,0,0,0.58);
+}
+
+.searchResult:hover .searchResultImg img{
+    transform: scale(1.04);
+}
+
+.searchResultImg{
+    height: 242px;
+    margin: auto;
+    margin-top: 20px;
+    overflow: hidden;
+    border-radius: 150px;
+    border: 4px solid #aa8fd1;
+}
+
+.searchResultImg img{
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: all 0.4s;
+}
+
+.searchResultMeta{
+    padding: 0 1rem 1rem;
+    color: #fff;
+}
+
+.searchResult h3{
+    text-align: center;
+    font-weight: bold;
+    font-size: 2rem;
+    margin: .6rem 0;
+}
+
+.spanYes,
+.spanNo{
+    width: max-content;
+    display: flex;
+    margin: auto;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: .8rem;
+    font-weight: bold;
+    padding: .3rem .4rem;
+    background-color: #ffa700;
+    border-radius: 4px;
+    color: #fff;
+}
+
+.spanNo{
+    background-color: #fff;
+    color: #777;
+}
+
+.searchResultMeta p{
+    border-top: 1px solid #eeeeee6e;
+    padding-top: 1rem;
+}
+
+.searchResult a{
+    width: 100%;
+    margin: auto;
+    text-decoration: none;
+}
+
+.searchResult button{
+    border: none;
+    background-color: #fff;
+    border-radius: 4px;
+    color: #777;
+    padding: 1.2rem 3rem;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    transition: all 0.2s;
+    margin: auto;
+    display: flex;
+    text-align: center;
+}
+
+.searchResult button:hover{
+    cursor: pointer;
+    -webkit-transform: translateY(-3px);
+    transform: translateY(-3px);
+    -webkit-box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+.search>h2,
+.searchError>h2{
+    text-align: center;
+    margin-inline: auto;
+    margin-bottom: 4rem;
+    padding-bottom: 10px;
+    font-weight: 100;
+    opacity: .6;
+}
+
+.searchError>p{
+    text-align: center;
+}
+
+.searchError{
+    height: 100vh;
+    width: 100%;
+    margin-left: 280px;
+}
+
+.burgerMenu{
+    display: none !important;
+}
+
+.burgerMenu img{
+    height: 100%;
+    width: auto;
+    cursor: pointer;
+}
+
+.topGames{
+    height: 100vh;
+    margin-left: 310px;
+    display: flex;
+    flex-direction: column;
+}
+
+.topGames>h2{
+    margin-left: 16px;
+    padding-bottom: 10px;
+    font-weight: 100;
+    opacity: .6;
+}
+
+.topGamesContent{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.topGamesContent a{
+    text-decoration: none;
+}
+
+.topGameCard{
+    height: 358px;
+    width: 200px;
+    margin: 1rem;
+    overflow: hidden;
+    color: #fff;
+    background-color: #fbfbfb;
+    cursor: pointer;
+    background: linear-gradient(90deg,#6541A5,#B48AFF);
+    transition: cubic-bezier(0.19, 1, 0.22, 1) .3s;
+}
+
+.topGameCard:hover{
+    cursor: pointer;
+    transform: scale(1.02);
+    -webkit-box-shadow: 0 6px 25px 0 rgba(30,38,44,.3);
+    -moz-box-shadow: 0 6px 25px 0 rgba(30,38,44,.3);
+    box-shadow: 0 6px 25px 0 rgba(30,38,44,.3);
+}
+
+.topGameImage img{
+    width: 100%;
+}
+
+.topGameMeta h2{
+    text-align: center;
+    font-size: .9rem;
+    padding: 0 1rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.topGameBtn a{
+    width: 100%;
+    margin: auto;
+    text-decoration: none;
+}
+
+.topGameBtn button{
+    border: none;
+    background-color: #fff;
+    border-radius: 4px;
+    color: #777;
+    font-size: .9rem;
+    text-transform: uppercase;
+    transition: all 0.2s;
+    margin: auto;
+    display: flex;
+    text-align: center;
+    padding: 1rem 3rem;
+}
+
+.topGameBtn button:hover{
+    cursor: pointer;
+    -webkit-transform: translateY(-3px);
+    transform: translateY(-3px);
+    -webkit-box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+.gameStreams{
+    height: 100vh;
+    margin-left: 310px;
+    display: flex;
+    flex-direction: column;
+}
+
+.gameStreams>h2{
+    margin-left: 9px;
+    padding-bottom: 10px;
+    font-weight: 100;
+    opacity: .6;
+}
+
+.gameStreamsTotalViewersCount{
+    display: flex;
+    align-items: center;
+    margin-left: 9px;
+    opacity: .8;
+}
+
+.gameStreamsTotalRedDot{
+    width: 14px;
+    margin-right: 5px;
+}
+
+.gameStreamsList{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+}
+
+.gameStreamsList a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.gameStreamsCard{
+    position: relative;
+    width: 96%;
+    margin: 6px auto;
+    border: 2px solid #fbfbfb;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: cubic-bezier(0.19, 1, 0.22, 1) .3s;
+}
+
+.gameStreamsCard:hover{
+    transform: scale(1.02);
+    -webkit-box-shadow: 0 6px 25px 0 rgba(30,38,44,.3);
+    -moz-box-shadow: 0 6px 25px 0 rgba(30,38,44,.3);
+    box-shadow: 0 6px 25px 0 rgba(30,38,44,.3);
+}
+
+
+.gameStreamsCard:hover .streamerLiveImg img{
+    filter: grayscale(0);
+}
+
+
+.gameStreamsCard:hover .streamerLiveMeta{
+    opacity: 1;
+}
+
+.gameStreamsImg img{
+    width: 100%;
+    vertical-align: middle;
+}
+
+.gameStreamsTag{
+    position: absolute;
+    top: 20px;
+    right: 12px;
+    padding: 0 24px;
+}
+
+.gameStreamsTag>span{
+    background-color: #e91916;
+    padding: .01rem .4rem;
+    font-weight: bold;
+    border-radius: 3px;
+    font-size: .9rem;
+    text-transform: uppercase;
+}
+
+.gameStreamsMeta{
+    content: "";
+    position: absolute;
+    top: 110px;
+    left: 0;
+    right: 0;
+    bottom: 0px;
+    padding: 0 24px;
+    background: linear-gradient(180deg,transparent 20%,rgba(20,27,32,.5) 60%,rgba(20,27,32,.8));
+}
+
+.gameStreamsIntro{
+    position: absolute;
+    left: 38px;
+    bottom: 18px;
+}
+
+.gameStreamsIntro h2{
+    font-size: .9rem;
+    margin: 0;
+}
+
+.gameStreamsIntro p{
+    font-size: .9rem;
+    margin: 0;
+}
+
+.gameStreamsRedDotViewersWatch{
+    position: absolute;
+    bottom: 18px;
+    right: 38px;
+}
+
+.gameStreamsRedDotViewers{
+    display: flex;
+    align-items: center;
+    margin-left: 12px;
+}
+
+.gameStreamsRedDot{
+    width: 10px;
+}
+
+.gameStreamsViewers{
+    font-weight: 100;
+    opacity: .6;
+    margin-left: 5px;
+}
+
+.topStreamers{
+    height: 100%;
+    width: 100%;
+    margin-left: 310px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.topStreamers>h2{
+    margin-left: 9px;
+    padding-bottom: 10px;
+    font-weight: 100;
+    opacity: .6;
+}
+
+.topStreamersLives{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.topStreamersLives>h2{
+    padding: .8rem 1.6rem;
+    border-radius: 40px;
+    color: #787878;
+}
+
+.streamerPicture{
+    height: 100%;
+    border-radius: 30px;
+    margin-right: 3%;
+}
+
+.streamerNameTitle{
+    width: 56%;
+}
+
+.streamerRedDotViewers{
+    position: absolute;
+    right: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.streamerRedDot{
+    width: 10px;
+}
+
+.streamerViewers{
+    font-size: .9rem;
+    margin-left: 5px;
+}
+
+.streamersLivesList{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+}
+
+.streamersLivesList a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.streamerLiveCard{
+    position: relative;
+    width: 96%;
+    margin: 6px auto;
+    border: 2px solid #fbfbfb;
+    overflow: hidden;
+    transition: cubic-bezier(0.19, 1, 0.22, 1) .3s;
+}
+
+.streamerLiveCard:hover{
+    transform: scale(1.02);
+    -webkit-box-shadow: 0 6px 25px 0 rgba(30,38,44,.3);
+    -moz-box-shadow: 0 6px 25px 0 rgba(30,38,44,.3);
+    box-shadow: 0 6px 25px 0 rgba(30,38,44,.3);
+}
+
+.streamerLiveImg img{
+    width: 100%;
+    vertical-align: middle;
+}
+
+.streamerLiveTag{
+    position: absolute;
+    top: 20px;
+    right: 12px;
+    padding: 0 24px;
+}
+
+.streamerLiveTag>span{
+    background-color: #e91916;
+    padding: .01rem .4rem;
+    font-weight: bold;
+    border-radius: 3px;
+    font-size: .9rem;
+    text-transform: uppercase;
+}
+
+.streamerLiveMeta{
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0 24px;
+    background: linear-gradient(180deg,transparent 20%,rgba(20,27,32,.5) 60%,rgba(20,27,32,.8));
+}
+
+.streamerLivePicture{
+    width: 12%;
+    border-radius: 30px;
+    margin-right: .4rem;
+}
+
+.streamerLiveIntro h2{
+    font-size: .9rem;
+    margin: 0;
+}
+
+.streamerLiveIntro p{
+    font-size: .9rem;
+    margin: 0;
+    padding-bottom: 20px;
+}
+
+.streamerLiveRedDotViewersWatch{
+    position: absolute;
+    bottom: 18px;
+    right: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.streamerLiveRedDotViewers{
+    display: flex;
+    align-items: center;
+    margin-left: 12px;
+}
+
+.streamerLiveRedDot{
+    width: 10px;
+}
+
+.streamerLiveViewers{
+    font-size: .9rem;
+    margin-left: 5px;
+}
+
+.liveStreamer{
+    height: 100vh;
+    width: 100%;
+    margin-left: 280px;
+}
+
+.liveStreamer>h2{
+    margin-left: 16px;
+    padding-bottom: 10px;
+    font-weight: 100;
+    opacity: .6;
+}
+
+.liveStreamerInfo{
+    height: 100%;
+    color: #fff;
+    padding: 1rem;
+    background-color: #1F1F23;
+}
+
+.liveStreamerIntro{
+    display: flex;
+    align-items: center;
+}
+
+.liveStreamerIntro h2{
+    margin-bottom: 0;
+}
+
+.liveStreamerIntro p{
+    margin-top: 0;
+}
+
+.liveStreamerLanguage{
+    width: max-content;
+    text-transform: uppercase;
+    background-color: #515151;
+    padding: .01rem .3rem;
+    border-radius: 2px;
+    font-size: .9rem;
+    font-weight: bold;
+}
+
+.liveStreamerRedDotViewers{
+    display: flex;
+    align-items: center;
+}
+
+.liveStreamerRedDot{
+    width: 14px;
+    margin-right: 5px;
+}
+
+@media screen and (max-width: 640px){
+    .App{
+        flex-direction: column;
+    }
+
+    nav{
+        height: 100%;
+    }
+
+    .navLeft{
+        height: 7rem;
+        width: 100%;
+        z-index: 1;
+    }
+
+    .navLogo{
+        height: 100%;
+        position: absolute;
+    }
+
+    .navLogo img{
+        height: 80%;
+        width: auto;
+        transition: cubic-bezier(0.23, 1, 0.320, 1) .3s;
+    }
+
+    .navItems{
+        position: absolute;
+        top: 0;
+        height: 100vh;
+        width: 100%;
+        background-color: #6541A5;
+        transform: translateX(-100%);
+        transition:cubic-bezier(0.23, 1, 0.320, 1) .5s;
+        opacity: 0;
+    }
+
+    .showMenuBurger{
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    .navItems ul {
+        margin-top: 12rem;
+    }
+
+    .burger{
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    .openMenu,
+    .closeMenu{
+        width: 10%;
+        display: flex;
+        float: right;
+        padding: 3rem;
+        border-radius: 8px;
+        z-index: 1;
+    }
+    
+    .openMenu:hover,
+    .closeMenu:hover{
+        cursor: pointer;
+        opacity: .8;
+        transition: .3s;
+    }
+
+    .showOpenMenu,
+    .showCloseMenu{
+        display: block;
+    }
+    
+    .hideOpenMenu,
+    .hideCloseMenu{
+        display: none;
+    }
+
+    .search,
+    .topGames,
+    .topStreamers,
+    .gameStreams,
+    .liveStreamer,
+    .search,
+    .searchError,
+    .home{
+        margin-top: 9rem;
+        margin-left: 0;
+    }
+
+    .home{
+        margin-top: 0;
+    }
+
+    .topGames>h2,
+    .topStreamers>h2,
+    .gameStreams>h2,
+    .liveStreamer>h2,
+    .gameStreamsTotalViewersCount{
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .gameStreamsTotalViewersCount{
+        margin-bottom: 16px;
+        justify-content: center;
+    }
+
+    .topGamesContent,
+    .streamersLivesList,
+    .gameStreamsList{
+        justify-content: center;
+    }
+
+    .topStreamersLives{
+        flex-direction: column;
+    }
+
+    .searchResult{
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 464px){
+
+    .topGameCard {
+        height: 100%;
+        width: 250px;
+    }
+
+    .topGamesContent a{
+        margin: 1rem 0;
+    }
+
+}
+
