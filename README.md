@@ -7,4 +7,4 @@ npm install react-router-dom\
 npm install react-twitch-embed-video\
 npm start
 
-Website link : https://twitchflow.petitcodeur.io/
+Website link : https://twitchflow.bricetroispointzero.io/
