@@ -1,6 +1,6 @@
 # Getting started with Twitchflow
 
-*Twitchflow v1.0 - Utilisation de l'API Twitch*
+*Twitchflow - Utilisation de l'API Twitch*
 
 > npm install\
 npm install react-router-dom\
